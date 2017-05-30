@@ -1,0 +1,49 @@
+hystrix:
+  image: registry.ng.bluemix.net/hystrix-dashboard
+  ports:
+   - "7979:7979"
+  links:
+   - gateway
+   - discovery
+discovery:
+  image: registry.ng.bluemix.net/discovery-microservice
+  ports:
+   - "8761:8761"
+configserver:
+  image: registry.ng.bluemix.net/config-microservice
+  ports:
+   - "8888:8888"
+  links:
+   - discovery
+gateway:
+  image: registry.ng.bluemix.net/api-gateway-microservice
+  ports:
+   - "10000:10000"
+  links:
+   - discovery
+   - configserver
+   - user
+   - movie
+   - recommendation
+user:
+  image: registry.ng.bluemix.net/users-microservice
+  links:
+   - discovery
+   - configserver
+movie:
+  image: registry.ng.bluemix.net/movie-microservice
+  links:
+   - discovery
+   - configserver
+recommendation:
+  image: registry.ng.bluemix.net/recommendation-microservice
+  links:
+   - discovery
+   - configserver
+moviesui:
+  image: registry.ng.bluemix.net/movies-ui
+  ports:
+     - "9006:9006"
+  links:
+   - discovery
+   - configserver
