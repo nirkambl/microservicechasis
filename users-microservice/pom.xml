@@ -72,6 +72,9 @@
                 <configuration>
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                     <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+					<dockerHost>tcp://containers-api.ng.bluemix.net:8443</dockerHost>
+					<dockerCertPath>/home/jenkins/.ice/certs/containers-api.ng.bluemix.net/0a25cd04-5a9d-4e98-9a6d-681fed6783b7</dockerCertPath>
+					<dockerTlsVerify>1</dockerTlsVerify>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
