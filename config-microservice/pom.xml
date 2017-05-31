@@ -17,7 +17,7 @@
     </parent>
 
     <properties>
-        <docker.image.prefix>kbastani</docker.image.prefix>
+        <docker.image.prefix>registry.ng.bluemix.net/nodecontainer1</docker.image.prefix>
         <start-class>services.Application</start-class>
     </properties>
 

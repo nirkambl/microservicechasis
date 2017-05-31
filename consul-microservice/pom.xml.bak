@@ -8,7 +8,7 @@
     <packaging>jar</packaging>
     <groupId>org.kbastani</groupId>
     <properties>
-        <docker.image.prefix>registry.ng.bluemix.net/nodecontainer1</docker.image.prefix>
+        <docker.image.prefix>kbastani</docker.image.prefix>
         <docker.plugin.version>0.4.13</docker.plugin.version>
     </properties>
     <dependencies>
