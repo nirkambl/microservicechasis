@@ -18,7 +18,7 @@ configserver:
 gateway:
   image: registry.ng.bluemix.net/nodecontainer1/api-gateway-microservice
   ports:
-   - "10000:10000"
+   - "169.46.150.58:10000"
   links:
    - discovery
    - configserver
